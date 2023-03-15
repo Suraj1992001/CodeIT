@@ -1,34 +1,34 @@
 //WAP that takes an integer array as input and finds the maximum element in that array
 
-package CodeIT;													//A package which contains similar kind of classes, interfaces etc.
-import java.util.*;												//Another package is imported so that we can use it
-public class Maximum_Element 									//Our main class
+package CodeIT;								//A package which contains similar kind of classes, interfaces etc.
+import java.util.*;							//Another package is imported so that we can use it
+public class Maximum_Element						//Our main class
 {
-	public void maximum()										//A function which perform our task
+	public void maximum()						//A function which perform our task
 	{
-		Scanner sc = new Scanner(System.in);					//An object of 'Scanner' class is created
-		int size, i, temp;										//Some variables are declared of 'int' datatype
-		System.out.println("Enter the size of the array:");		//Asking the user for input
-		size = sc.nextInt();									//User entered input
+		Scanner sc = new Scanner(System.in);			//An object of 'Scanner' class is created
+		int size, i, temp;					//Some variables are declared of 'int' datatype
+		System.out.println("Enter the size of the array:");	//Asking the user for input
+		size = sc.nextInt();					//User entered input
 		int a[] = new int[size];
 		System.out.println("Enter the elements in the array:");
-		for(i=0;i<size;i++)										//'for' loop for entering elements in the array
+		for(i=0;i<size;i++)					//'for' loop for entering elements in the array
 		{
-			a[i] = sc.nextInt();								//User entering the elements
+			a[i] = sc.nextInt();				//User entering the elements
 		}
-		temp = a[0];											//First element of array is assigned
+		temp = a[0];						//First element of array is assigned
 		for(i=1;i<size;i++)
 		{
-			if(a[i]>temp)										//'if' statement for condition checking
+			if(a[i]>temp)					//'if' statement for condition checking
 			{
 				temp = a[i];
 			}
 		}
-		System.out.println("The maximum number is:"+temp);		//Printing the output
+		System.out.println("The maximum number is:"+temp);	//Printing the output
 	}
-	public static void main(String[] args) 						//Our main method
+	public static void main(String[] args) 				//Our main method
 	{
-		Maximum_Element me = new Maximum_Element();				//An object of our main class created
-		me.maximum();											//A function is called
+		Maximum_Element me = new Maximum_Element();		//An object of our main class created
+		me.maximum();						//A function is called
 	}
 }
