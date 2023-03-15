@@ -1,0 +1,26 @@
+//WAP that accepts a string from the user and prints the reverse of that string
+
+package CodeIT;												//A package which contains similar kind of classes, interfaces etc.
+import java.util.*;											//Another package is imported so that we can use it
+public class Reverse_String 								//Our main class 
+{
+	public void reverse()									//A function which perform our task
+	{
+		Scanner sc = new Scanner(System.in);				//An object of 'Scanner' class is created
+		String s1, s2="";									//Some variables are declared and initialize of 'String' datatype
+		char ch;											//A variable of 'char' datatype is declared
+		System.out.println("Enter a string:");				//Asking the user for input
+		s1 = sc.next();										//User entered input
+		for(int i=0;i<s1.length();i++)						//'for' loop for determining each character of string 		
+		{
+			ch = s1.charAt(i);								//Each character is entered one by one
+			s2 = ch + s2;									//All characters are added
+		}
+		System.out.println("Reverse of a string is:"+s2);	//Printing the output
+	}
+	public static void main(String[] args) 					//Our main method
+	{
+		Reverse_String rs = new Reverse_String();			//An object of our main class is created
+		rs.reverse();										//A function is called
+	}
+}
