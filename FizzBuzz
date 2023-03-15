@@ -1,17 +1,17 @@
 /*WAP that prints the numbers from 1 to 100. For multiple of 3, print "Fizz" instead of the number and for the multiple of 5, print "Buzz". For numbers which are 
 multiples of both 3 and 5, print "FizzBuzz"*/
 
-package CodeIT;									          //A package which contains similar kind of classes, interfaces etc.
-public class FizzBuzz							        //Our main class 
+package CodeIT;					          	//A package which contains similar kind of classes, interfaces etc.
+public class FizzBuzz					        //Our main class 
 {
-	public void print()							        //A function which perform our task
+	public void print()				        //A function which perform our task
 	{ 
-		int i;									              //A variable of 'int' datatype
-		for(i=1;i<=100;i++)						        //'for' loop
+		int i; 				              	//A variable of 'int' datatype
+		for(i=1;i<=100;i++)			        //'for' loop
 		{
-			if(i%3==0 && i%5==0)				        //else if ladder
+			if(i%3==0 && i%5==0)			//else if ladder
 			{
-				System.out.println("FizzBuzz");	  //Printing details
+				System.out.println("FizzBuzz");	//Printing details
 			}
 			else if(i%3==0)
 			{
@@ -27,9 +27,9 @@ public class FizzBuzz							        //Our main class
 			}
 		}
 	}
-	public static void main(String[] args)  //Our main method 
+	public static void main(String[] args)  		//Our main method 
 	{
-		FizzBuzz fb = new FizzBuzz();		      //An object of our class is created
-		fb.print();							              //Our function is called
+		FizzBuzz fb = new FizzBuzz();		      	//An object of our class is created
+		fb.print();	       		              	//Our function is called
 	}
 }
