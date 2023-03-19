@@ -1,0 +1,49 @@
+package vaccination;
+abstract class Vaccine 
+{
+  public void firstDose(String nationality, int age) 
+  {
+    if (nationality.equalsIgnoreCase("Indian") && age >= 18) 
+    {
+       System.out.println("First dose successfull.");
+       System.out.println("Please pay Rs. 250.");
+    } 
+    else 
+    {
+       System.out.println("Not eligible");
+    }
+  }
+
+  public void secondDose(boolean isFirstDoseCompleted) 
+  {
+    if (isFirstDoseCompleted) 
+    {
+       System.out.println("Second dose successfull.");
+    } 
+    else 
+    {
+       System.out.println("You have to take first dose.");
+    }
+  }  
+
+public abstract void boosterDose();
+}
+
+class VaccinationSuccessful extends Vaccine 
+{
+  public void boosterDose() 
+  {
+    System.out.println("Booster dose successfull.");
+  }
+}
+
+public class vaccination 
+{
+  public static void main(String[] args) 
+  {
+    VaccinationSuccessful vs = new VaccinationSuccessful();
+    vs.firstDose("Indian", 20);
+    vs.secondDose(true);
+    vs.boosterDose();
+  }
+}
