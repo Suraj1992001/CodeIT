@@ -1,0 +1,104 @@
+package BookManager;
+import java.util.*;
+public class Book 
+{
+	private int bookid;
+	private String bookname;
+	private double bookprice;
+	private String authorname;
+	private static String libraryname = "XYZ Library";
+	private boolean availability;
+	
+	static Scanner sc = new Scanner(System.in);
+	public Book()
+	{
+		this.bookid = 0;
+		this.bookname = "";
+		this.bookprice = 0.0;
+		this.authorname = "";
+		this.availability = false;
+	}
+	
+	public void createbook()
+	{
+		System.out.println("Enter book ID:");
+		this.bookid = sc.nextInt();
+		System.out.println("Enter book name:");
+		this.bookname = sc.next();
+		System.out.println("Enter book price:");
+		this.bookprice = sc.nextDouble();
+		System.out.println("Enter author name:");
+		this.authorname = sc.next();
+		this.availability = true;
+		System.out.println("Book added successfully");
+	}
+	
+	public void displaybook()
+	{
+		System.out.println("Book ID: "+this.bookid);
+		System.out.println("Book Name: "+this.bookname);
+		System.out.println("Book Price: "+this.bookprice);
+		System.out.println("Author Name: "+this.authorname);
+		System.out.println("Library Name: "+libraryname);
+		System.out.println("Availability: "+(this.availability ? "Available" : "Not Available"));
+	}
+	
+	public void displaybookbyname(String bookname)
+	{
+		if(this.bookname.equals(bookname))
+		{
+			displaybook();
+		}
+		else
+		{
+			System.out.println("Book not found");
+		}
+	}
+	
+	public void borrowbook(String bookname)
+	{
+		if(this.bookname.equals(bookname) && this.availability)
+		{
+			this.availability = false;
+			System.out.println("Book borrowed successfully");
+		}
+		else
+		{
+			System.out.println("Book not found");
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		int size, i;
+		String bookname;
+		System.out.println("How many books you want to add:");
+		size = sc.nextInt();
+		Book[] book = new Book[size];
+		for(i=0;i<size;i++)
+		{
+			book[i] = new Book();
+			book[i].createbook();
+		}
+		
+		System.out.println("All book details");
+		for(i=0;i<size;i++)
+		{
+			book[i].displaybook();
+		}
+		
+		System.out.println("Enter book name:");
+		bookname = sc.next();
+		for(i=0;i<size;i++)
+		{
+			book[i].displaybookbyname(bookname);
+		}
+		
+		System.out.println("Enter book name:");
+		bookname = sc.next();
+		for(i=0;i<size;i++)
+		{
+			book[i].borrowbook(bookname);
+		}
+	}
+}
