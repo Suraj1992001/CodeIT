@@ -1,0 +1,41 @@
+package banksystem;
+public class Bank 
+{
+  public void deposit(double amount) 
+  {
+     System.out.println("Depositing " + amount + " in Bank account");
+  }
+}
+
+class ABC extends Bank 
+{
+  @Override
+  public void deposit(double amount) 
+  {
+     System.out.println("Depositing " + amount + " in ABC account");
+  }
+}
+
+class XYZ extends Bank 
+{
+  @Override
+  public void deposit(double amount) 
+  {
+     System.out.println("Depositing " + amount + " in XYZ account");
+  }
+}
+
+public class banktest 
+{
+ public static void main(String[] args) 
+ {
+     Bank bank = new Bank();
+     bank.deposit(5000);
+
+     ABC a = new ABC();
+     a.deposit(5000);
+
+     XYZ x = new XYZ();
+     x.deposit(5000);
+ }
+}
